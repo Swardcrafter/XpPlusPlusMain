@@ -23,6 +23,14 @@ def login():
 	
 	return render_template("logged_page/index.html", user_name=user_name, user_id=user_id)
 
+@app.route("/api/main")
+def api():
+	args = request.args
+
+	print(args)
+
+	return render_template("api/index.html")
+
 
 if(__name__ == "__main__"):
     app.run(host='0.0.0.0', port=81)
