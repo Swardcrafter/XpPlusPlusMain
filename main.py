@@ -23,13 +23,13 @@ def login():
 	
 	return render_template("logged_page/index.html", user_name=user_name, user_id=user_id)
 
-@app.route("/api/main")
+@app.route("/api/main", methods=["POST"])
 def api():
-	args = request.args
+	data = request.json
 
-	print(args)
+	print(data)
 
-	return render_template("api/index.html")
+	return "Message Recived"
 
 
 if(__name__ == "__main__"):
